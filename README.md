@@ -29,64 +29,40 @@ the method predicted.
 
 ### 📊 Library Explorer
 
-Load a spectral library and see what is actually in it. Eleven interactive views cover the
-precursor *m/z*, ion-mobility and retention-time distributions, how library intensity relates
-to each of them, the charge-state breakdown, a rotatable 3D ion cloud of ion mobility × *m/z* ×
-retention time, and a b/y fragment-ion coverage plot. You can look at the whole library or
-narrow to a single protein, with sequence coverage drawn for it — supply a FASTA or let
-FLEXploDIA fetch the sequence from UniProt. Headline precursor, peptide and protein counts are
-computed by streaming the entire file rather than sampling it, so they are exact even on a
-multi-gigabyte library, while the scatter plots draw a representative sample to stay
-responsive. The retention-time axis is labelled with the scale the library is genuinely on, so
-indexed retention time is never silently presented as minutes.
+Load a spectral library and see what is actually in it. **Eleven interactive views** cover the precursor *m/z*, ion-mobility, and retention-time distributions, how library intensity relates to each of them, the charge-state breakdown, a rotatable **3D ion cloud** (ion mobility × *m/z* × retention time), and a **b/y fragment-ion coverage plot**. You can look at the whole library or narrow to a single protein, with sequence coverage drawn for it — supply a FASTA or let FLEXploDIA fetch the sequence from UniProt. Headline precursor, peptide, and protein counts are computed by **streaming the entire file** rather than sampling it, so they are exact even on a multi-gigabyte library, while the scatter plots draw a representative sample to stay responsive. The retention-time axis is labelled with the scale the library is genuinely on, so indexed retention time is never silently presented as minutes.
+
+<div align="center">
+<img src="FLEXploDIA_01.jpg" alt="Library Explorer View" width="800" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+</div>
 
 ### 🧰 Library Editor
 
-Everything that prepares a library before it is explored or validated, in three sub-tabs. The
-**Library Optimizer** takes a library from any supported search engine, keeps the rows that
-name a protein, splits every protein group so each row carries exactly one UniProt ID and one
-gene, and matches those identifiers against the FASTA the search used — identifier to
-identifier, never by sequence. It returns the mapped library as a `.tsv` plus a status file
-that accounts for every single row of the source, so a protein count can always be read
-alongside how many rows never had an accession at all. The **Library Extractor** pulls a
-focused sub-library out of a large one: strip chosen modifications, then keep or remove selected
-proteins with their related isoforms detected for you. The **Library Merger** combines two
-libraries into one, aligning columns that differ between them and optionally removing
-duplicate precursors. All three stream from disk rather than loading the library into memory,
-and report a live row count while they work.
+Everything that prepares a library before it is explored or validated, divided into three sub-tabs:
+* **Library Optimizer:** Takes a library from any supported search engine, keeps the rows that name a protein, splits every protein group so each row carries exactly one UniProt ID and one gene, and matches those identifiers against the FASTA the search used (identifier to identifier, never by sequence). It returns the mapped library as a `.tsv` plus a **status file** that accounts for every single row of the source, so a protein count can always be read alongside how many rows never had an accession at all. 
+* **Library Extractor:** Pulls a focused sub-library out of a large one: strip chosen modifications, then keep or remove selected proteins with their related isoforms detected for you. 
+* **Library Merger:** Combines two libraries into one, aligning columns that differ between them and optionally removing duplicate precursors. 
+
+*All three modules stream from disk rather than loading the library into memory, and report a live row count while they work.*
 
 ### 🔬 Prot./Pep. Cloud Viz.
 
-Zoom in on a single protein and see every peptidoform it contributes, plotted in ion-mobility ×
-*m/z* space against the background cloud of the whole library. Colour the map by modification,
-by missed cleavages or by density to see how a PTM or an incomplete digest redistributes
-precursors across the acquisition space. Selecting a peptidoform draws its fragment-ion
-fingerprint, with b ions numbered from the N-terminus and y ions from the C-terminus so each
-column of the plot is one backbone cleavage seen from both ends. Sequence coverage is rendered
-residue by residue from a FASTA, and an existing PASEF window file can be overlaid to check
-whether the peptidoforms you care about actually fall inside the windows. The full precursor
-table and the peptidoform table are both downloadable as `.tsv`.
+Zoom in on a single protein and see every peptidoform it contributes, plotted in ion-mobility × *m/z* space against the background cloud of the whole library. Colour the map by **modification**, by **missed cleavages**, or by **density** to see how a PTM or an incomplete digest redistributes precursors across the acquisition space. Selecting a peptidoform draws its fragment-ion fingerprint, with b ions numbered from the N-terminus and y ions from the C-terminus so each column of the plot is one backbone cleavage seen from both ends. Sequence coverage is rendered residue by residue from a FASTA, and an existing PASEF window file can be overlaid to check whether the peptidoforms you care about actually fall inside the windows. The full precursor table and the peptidoform table are both downloadable as `.tsv`.
+
+<div align="center">
+<img src="FLEXploDIA_02.jpg" alt="Protein/Peptide Cloud Visualization" width="800" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+</div>
 
 ### ⚙️ Method Developer
 
-Design a dia-PASEF acquisition scheme against the ion distribution of a real library rather
-than a generic grid. FLEXploDIA supports both **Slice-PASEF** and **Diagonal-PASEF**: you set
-the frame and window parameters, and the scheme is drawn directly over the library's precursor
-cloud so you can see which regions are covered and which are being wasted on empty space.
-Coverage is scored as you adjust, so the trade-off between window width, cycle time and the
-fraction of precursors captured is visible while you are making it. Finished methods export as
-a `.zip` of ready-to-use method files, with a summary `.csv` describing the window layout.
+Design a dia-PASEF acquisition scheme against the ion distribution of a real library rather than a generic grid. FLEXploDIA supports both **Slice-PASEF** and **Diagonal-PASEF**: you set the frame and window parameters, and the scheme is drawn directly over the library's precursor cloud so you can see which regions are covered and which are being wasted on empty space. **Coverage is scored as you adjust**, so the trade-off between window width, cycle time, and the fraction of precursors captured is visible while you are making it. Finished methods export as a `.zip` of ready-to-use method files, with a summary `.csv` describing the window layout.
 
 ### 🧪 PASEF Validator
 
-Close the loop: compare the DDA library a method was designed from against the DIA-NN library
-the acquisition actually produced. Supply both libraries, the FASTA common to them and the
-PASEF method file, then pick a protein and see its peptidoforms classified as present in both,
-DDA only, or DIA only — the DDA-only entries being precisely what the acquisition failed to
-deliver. Each peptidoform can be inspected with the DDA and DIA fragment fingerprints side by
-side, so a precursor that was detected but poorly fragmented is distinguishable from one that
-was missed outright. A PTM filter narrows the comparison to modified forms, and the full
-protein-by-protein comparison table downloads as a `.tsv`.
+Close the loop: compare the DDA library a method was designed from against the DIA-NN library the acquisition actually produced. Supply both libraries, the FASTA common to them, and the PASEF method file, then pick a protein and see its peptidoforms classified as present in both, **DDA only**, or **DIA only** — the DDA-only entries being precisely what the acquisition failed to deliver. Each peptidoform can be inspected with the DDA and DIA fragment fingerprints side by side, so a precursor that was detected but poorly fragmented is distinguishable from one that was missed outright. A PTM filter narrows the comparison to modified forms, and the full protein-by-protein comparison table downloads as a `.tsv`.
+
+<div align="center">
+<img src="FLEXploDIA_03.jpg" alt="PASEF Validator View" width="800" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+</div>
 
 Two app-wide panels sit above the tabs: an editable **Modification Table** (UniMod names and
 plot colours, used consistently everywhere) and an **Abbreviations** reference.
