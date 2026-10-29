@@ -4,6 +4,9 @@
 
 **The pipeline for advanced proteomics Library Exploration, Visualization, PASEF Method Development and Validation**
 
+<!-- Replace the src path below with your actual uploaded GIF URL or local repo path -->
+<img src="assets/FLEXploDIA_Final.gif" alt="FLEXploDIA Interface Demo" width="700" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+
 [![Try it online](https://img.shields.io/badge/Try%20it-online-blue)](https://deepbiswas-flexplodia.hf.space/)
 [![Desktop version](https://img.shields.io/badge/Desktop-download-brightgreen)](https://github.com/DeepHMS/FLEXploDIA)
 
