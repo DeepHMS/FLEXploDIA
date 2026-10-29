@@ -32,7 +32,7 @@ the method predicted.
 Load a spectral library and see what is actually in it. **Eleven interactive views** cover the precursor *m/z*, ion-mobility, and retention-time distributions, how library intensity relates to each of them, the charge-state breakdown, a rotatable **3D ion cloud** (ion mobility × *m/z* × retention time), and a **b/y fragment-ion coverage plot**. You can look at the whole library or narrow to a single protein, with sequence coverage drawn for it — supply a FASTA or let FLEXploDIA fetch the sequence from UniProt. Headline precursor, peptide, and protein counts are computed by **streaming the entire file** rather than sampling it, so they are exact even on a multi-gigabyte library, while the scatter plots draw a representative sample to stay responsive. The retention-time axis is labelled with the scale the library is genuinely on, so indexed retention time is never silently presented as minutes.
 
 <div align="center">
-<img src="FLEXploDIA_01.jpg" alt="Library Explorer View" width="800" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+<img src="FLEXploDIA_01.png" alt="Library Explorer View" width="800" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 </div>
 
 ### 🧰 Library Editor
