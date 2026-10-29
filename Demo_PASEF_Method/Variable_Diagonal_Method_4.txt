@@ -1,0 +1,10 @@
+type, mobility pos.1 [1/K0], mass pos.1 start [m/z], mass pos.1 end [m/z], mobility pos.2 [1/K0], mass pos.2 start [m/z]
+ms,-,-,-,-,-
+diagonal,0.60,100.0,221.2,1.61,1270.0
+diagonal,0.60,221.2,241.4,1.61,1391.2
+diagonal,0.60,241.4,255.3,1.61,1411.4
+diagonal,0.60,255.3,263.7,1.61,1425.3
+diagonal,0.60,263.7,280.0,1.61,1433.7
+diagonal,0.60,280.0,336.0,1.61,1450.0
+diagonal,0.60,336.0,426.4,1.61,1506.0
+diagonal,0.60,426.4,500.0,1.61,1596.4
