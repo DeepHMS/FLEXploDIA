@@ -1,0 +1,41 @@
+site_name: FLEXploDIA Tutorials
+site_url: https://deephms.github.io/FLEXploDIA/
+site_description: Step-by-step tutorials for every FLEXploDIA tab.
+repo_url: https://github.com/DeepHMS/FLEXploDIA
+repo_name: DeepHMS/FLEXploDIA
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Library Explorer: library-explorer.md
+  - Library Editor: library-editor.md
+  - Prot./Pep. Cloud Viz.: cloud-viz.md
+  - Method Developer: method-developer.md
+  - PASEF Validator: pasef-validator.md
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: red
+  features:
+    - navigation.tabs        # one tab per page across the top
+    - navigation.sections
+    - navigation.top         # "back to top" button
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition               # !!! note / !!! warning boxes
+  - attr_list                # { width="700" } on images
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+plugins:
+  - search
