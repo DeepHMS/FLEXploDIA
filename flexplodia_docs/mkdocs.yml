@@ -3,7 +3,7 @@ site_url: https://deephms.github.io/FLEXploDIA/
 site_description: Step-by-step tutorials for every FLEXploDIA tab.
 repo_url: https://github.com/DeepHMS/FLEXploDIA
 repo_name: DeepHMS/FLEXploDIA
-edit_uri: edit/main/docs/
+edit_uri: edit/main/flexplodia_docs/docs/
 
 nav:
   - Home: index.md
