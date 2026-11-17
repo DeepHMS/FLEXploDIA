@@ -8,10 +8,7 @@
 <img src="FLEXploDIA_Final.gif" alt="FLEXploDIA Interface Demo" width="700" style="margin-top: 15px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 
 [![Try it online](https://img.shields.io/badge/Try%20it-online-blue)](https://flexplodia.flexiverse.space/)
-
 [![Desktop version](https://img.shields.io/badge/Desktop-download-brightgreen)](https://github.com/DeepHMS/FLEXploDIA)
-
-Developed and maintained in the **Steen2 Lab**, Boston Children's Hospital
 
 </div>
 
