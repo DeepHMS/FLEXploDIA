@@ -72,8 +72,7 @@ plot colours, used consistently everywhere) and an **Abbreviations** reference.
 >
 > | | Online version | Desktop version |
 > |---|---|---|
-> | **Recommended library size** | up to **50 MB** | no limit |
-> | **Hard maximum** | **100 MB** (upload is refused above this) | no limit |
+> | **Library size limit** | **50 MB** (larger uploads are refused) | no limit |
 > | **DIA-NN `report-lib.parquet`** | **not supported** | fully supported |
 > | **Speed** | shared CPU, slower | full speed on your own machine |
 > | **Your data** | uploaded to a shared public server | never leaves your machine |
@@ -300,7 +299,7 @@ online version.** Use the desktop build for anything confidential.
 
 | Symptom | Cause and fix |
 |---|---|
-| `❌ This file is NNN MB. The online version accepts libraries up to 100 MB` | The online size ceiling. Use the desktop version. |
+| `❌ This file is NNN MB. The online version accepts libraries up to 50 MB` | The online size ceiling. Use the desktop version. |
 | `.parquet libraries are not processed on the online version` | Expected online. Use the desktop version. |
 | `Reading .parquet needs the pyarrow package` | `pip install pyarrow` into the same environment. |
 | `This parquet is incomplete: it begins correctly but the end of the file is missing` | The upload was interrupted or the app was stopped mid-copy. The original is usually fine — upload again and let it finish. |
@@ -333,5 +332,7 @@ Bug reports and feature requests are welcome via
 
 ## License
 
-<!-- TODO: add a LICENSE file and name it here (e.g. MIT, BSD-3-Clause, GPL-3.0). -->
-See `LICENSE`.
+FLEXploDIA, its source code and its documentation are protected by copyright. No licence is
+granted to copy, modify or redistribute them without written permission. For licensing,
+collaboration or any other use, please contact
+[Dr. Deeptarup Biswas](mailto:Deeptarup.Biswas@childrens.harvard.edu), [Prof. Judith Steen](mailto:Judith.Steen@childrens.harvard.edu)
