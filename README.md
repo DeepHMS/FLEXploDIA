@@ -13,7 +13,7 @@
 
 ---
 
-## Click the link below to access **▶ [FLEXploDIA v1.4](https://flexplodia.flexiverse.space/)**
+## Click the link below to access **▶ [FLEXploDIA v1.4](https://deepbiswas-flexplodia.hf.space/)**
 
 No installation, nothing to configure — open the link and upload a library.
 
